@@ -14,11 +14,17 @@ Goaplan.
 
 1. clone the repository
 2. install the required go packages
-    - go get -u
+
+    ``` shell
+    go get [-u]
+    ```
 3. install vendor code
-    - cd vendor
-    - make nanomsg
-    - make nanomsg4py
+
+    ``` shell
+    cd vendor
+    make nanomsg
+    make nanomsg4py
+    ```
 4. export nanomsg library path for python
 
     ``` shell
@@ -74,10 +80,10 @@ Example:
     go test -v <package>
 ```
 
-or, from within the `src` folder:
+or
 
 ``` shell
-    go test ./...
+    go test ./src/...
 ```
 
 ### Contact ###
