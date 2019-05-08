@@ -31,7 +31,8 @@ Goaplan.
 
 To solve a distributed multi-agent planning problem, execute the following steps
 
-1. compile the problem description files into the required json format
+1. compile the problem description files (factored MA-PDDL) into the required
+   json format
 
 ``` shell
     ./translate.sh <src-folder> <trg-folder>
@@ -72,9 +73,11 @@ Example:
 ``` shell
     go test -v <package>
 ```
-or
+
+or, from within the `src` folder:
+
 ``` shell
-    make tests
+    go test ./...
 ```
 
 ### Contact ###
