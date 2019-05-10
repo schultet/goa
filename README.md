@@ -5,9 +5,8 @@ Current version: 1.0
 
 ### Content ###
 
-This repository contains the source files of a privacy preserving distributed
-multi-agent planning system called Goa (= Groups of agents), also referred to as
-Goaplan.  
+This repository contains the source files of *Goa*, a privacy preserving
+distributed multi-agent planning system.
 
 
 ### Setup ###

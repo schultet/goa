@@ -1,0 +1,579 @@
+SCRIPT  /home/tim/.vim/bundle/vim-go/autoload/go/fmt.vim
+Sourced 1 time
+Total time:   0.000573
+ Self time:   0.000573
+
+count  total (s)   self (s)
+                            " Copyright 2011 The Go Authors. All rights reserved.
+                            " Use of this source code is governed by a BSD-style
+                            " license that can be found in the LICENSE file.
+                            "
+                            " fmt.vim: Vim command to format Go files with gofmt.
+                            "
+                            " This filetype plugin add a new commands for go buffers:
+                            "
+                            "   :Fmt
+                            "
+                            "       Filter the current Go buffer through gofmt.
+                            "       It tries to preserve cursor position and avoids
+                            "       replacing the buffer with stderr output.
+                            "
+                            " Options:
+                            "
+                            "   g:go_fmt_command [default="gofmt"]
+                            "
+                            "       Flag naming the gofmt executable to use.
+                            "
+                            "   g:go_fmt_autosave [default=1]
+                            "
+                            "       Flag to auto call :Fmt when saved file
+                            "
+                            
+    1              0.000022 if !exists("g:go_fmt_command")
+    1              0.000012     let g:go_fmt_command = "gofmt"
+    1              0.000004 endif
+                            
+    1              0.000009 if !exists("g:go_goimports_bin")
+    1              0.000007     let g:go_goimports_bin = "goimports"
+    1              0.000002 endif
+                            
+    1              0.000008 if !exists('g:go_fmt_fail_silently')
+    1              0.000010     let g:go_fmt_fail_silently = 0
+    1              0.000002 endif
+                            
+    1              0.000006 if !exists('g:go_fmt_options')
+    1              0.000005     let g:go_fmt_options = ''
+    1              0.000002 endif
+                            
+    1              0.000008 if !exists("g:go_fmt_experimental")
+    1              0.000006     let g:go_fmt_experimental = 0
+    1              0.000003 endif
+                            
+    1              0.000006 let s:got_fmt_error = 0
+                            
+                            "  we have those problems : 
+                            "  http://stackoverflow.com/questions/12741977/prevent-vim-from-updating-its-undo-tree
+                            "  http://stackoverflow.com/questions/18532692/golang-formatter-and-vim-how-to-destroy-history-record?rq=1
+                            "
+                            "  The below function is an improved version that aims to fix all problems.
+                            "  it doesn't undo changes and break undo history.  If you are here reading
+                            "  this and have VimL experience, please look at the function for
+                            "  improvements, patches are welcome :)
+    1              0.000012 function! go#fmt#Format(withGoimport)
+                                " save cursor position and many other things
+                                let l:curw=winsaveview()
+                            
+                                " needed for testing if gofmt fails or not
+                                let l:tmpname=tempname()
+                                call writefile(getline(1,'$'), l:tmpname)
+                            
+                            
+                                if g:go_fmt_experimental == 1
+                                    " save our undo file to be restored after we are done. This is needed to
+                                    " prevent an additional undo jump due to BufWritePre auto command and also
+                                    " restore 'redo' history because it's getting being destroyed every
+                                    " BufWritePre
+                                    let tmpundofile=tempname()
+                                    exe 'wundo! ' . tmpundofile
+                                endif
+                            
+                                " get the command first so we can test it
+                                let fmt_command = g:go_fmt_command
+                                if a:withGoimport  == 1 
+                                    let fmt_command  = g:go_goimports_bin
+                                endif
+                            
+                                " if it's something else than gofmt, we need to check the existing of that
+                                " binary. For example if it's goimports, let us check if it's installed,
+                                " if not the user get's a warning via go#path#CheckBinPath()
+                                if fmt_command != "gofmt"
+                                    " check if the user has installed goimports
+                                    let bin_path = go#path#CheckBinPath(fmt_command) 
+                                    if empty(bin_path) 
+                                        return 
+                                    endif
+                            
+                                    " change GOPATH too, so goimports can pick up the correct library
+                                    let old_gopath = $GOPATH
+                                    let $GOPATH = go#path#Detect()
+                            
+                                    let fmt_command = bin_path
+                                endif
+                            
+                                " populate the final command with user based fmt options
+                                let command = fmt_command . ' ' . g:go_fmt_options
+                            
+                                " execute our command...
+                                let out = system(command . " " . l:tmpname)
+                                let splitted = split(out, '\n')
+                            
+                                if fmt_command != "gofmt"
+                                    let $GOPATH = old_gopath
+                                endif
+                            
+                            
+                                "if there is no error on the temp file replace the output with the current
+                                "file (if this fails, we can always check the outputs first line with:
+                                "splitted =~ 'package \w\+')
+                                if v:shell_error == 0
+                                    " remove undo point caused via BufWritePre
+                                    try | silent undojoin | catch | endtry
+                            
+                                    " do not include stderr to the buffer, this is due to goimports/gofmt
+                                    " tha fails with a zero exit return value (sad yeah).
+                                    let default_srr = &srr
+                                    set srr=>%s 
+                            
+                                    " delete any leftover before we replace the whole file. Suppose the
+                                    " file had 20 lines, but new output has 10 lines, only 1-10 are
+                                    " replaced with setline, remaining lines 11-20 won't get touched. So
+                                    " remove them.
+                                    if line('$') > len(splitted)
+                                        execute len(splitted) .',$delete'
+                                    endif
+                            
+                                    " setline iterates over the list and replaces each line
+                                    call setline(1, splitted)
+                            
+                                    " only clear quickfix if it was previously set, this prevents closing
+                                    " other quickfixes
+                                    if s:got_fmt_error 
+                                        let s:got_fmt_error = 0
+                                        call setqflist([])
+                                        cwindow
+                                    endif
+                            
+                                    " put back the users srr setting
+                                    let &srr = default_srr
+                                elseif g:go_fmt_fail_silently == 0 
+                                    "otherwise get the errors and put them to quickfix window
+                                    let errors = []
+                                    for line in splitted
+                                        let tokens = matchlist(line, '^\(.\{-}\):\(\d\+\):\(\d\+\)\s*\(.*\)')
+                                        if !empty(tokens)
+                                            call add(errors, {"filename": @%,
+                                                        \"lnum":     tokens[2],
+                                                        \"col":      tokens[3],
+                                                        \"text":     tokens[4]})
+                                        endif
+                                    endfor
+                                    if empty(errors)
+                                        % | " Couldn't detect gofmt error format, output errors
+                                    endif
+                                    if !empty(errors)
+                                        call setqflist(errors, 'r')
+                                        echohl Error | echomsg "Gofmt returned error" | echohl None
+                                    endif
+                                    let s:got_fmt_error = 1
+                                    cwindow
+                                endif
+                            
+                                if g:go_fmt_experimental == 1
+                                    " restore our undo history
+                                    silent! exe 'rundo ' . tmpundofile
+                                    call delete(tmpundofile)
+                                endif
+                            
+                                " restore our cursor/windows positions
+                                call delete(l:tmpname)
+                                call winrestview(l:curw)
+                            endfunction
+                            
+                            
+                            " vim:ts=4:sw=4:et
+
+FUNCTION  <SNR>58_OnCursorHold()
+Called 3 times
+Total time:   0.001224
+ Self time:   0.000224
+
+count  total (s)   self (s)
+    3   0.000411   0.000078   if !s:AllowedToCompleteInCurrentFile()
+                                return
+                              endif
+                            
+    3   0.000256   0.000059   call s:SetUpCompleteopt()
+    3   0.000520   0.000050   call s:OnFileReadyToParse()
+
+FUNCTION  <SNR>58_UpdateDiagnosticNotifications()
+Called 4 times
+Total time:   0.000176
+ Self time:   0.000132
+
+count  total (s)   self (s)
+    4   0.000128   0.000084   let should_display_diagnostics = g:ycm_show_diagnostics_ui && s:DiagnosticUiSupportedForCurrentFiletype()
+                            
+    4              0.000016   if !should_display_diagnostics
+    4              0.000007     return
+                              endif
+                            
+                              py ycm_state.UpdateDiagnosticInterface()
+
+FUNCTION  <SNR>58_DiagnosticUiSupportedForCurrentFiletype()
+Called 4 times
+Total time:   0.000044
+ Self time:   0.000044
+
+count  total (s)   self (s)
+    4              0.000035   return get( s:diagnostic_ui_filetypes, &filetype, 0 )
+
+FUNCTION  <SNR>40_Highlight_Matching_Pair()
+Called 2 times
+Total time:   0.000123
+ Self time:   0.000123
+
+count  total (s)   self (s)
+                              " Remove any previous match.
+    2              0.000011   if exists('w:paren_hl_on') && w:paren_hl_on
+                                3match none
+                                let w:paren_hl_on = 0
+                              endif
+                            
+                              " Avoid that we remove the popup menu.
+                              " Return when there are no colors (looks like the cursor jumps).
+    2              0.000008   if pumvisible() || (&t_Co < 8 && !has("gui_running"))
+                                return
+                              endif
+                            
+                              " Get the character under the cursor and check if it's in 'matchpairs'.
+    2              0.000005   let c_lnum = line('.')
+    2              0.000004   let c_col = col('.')
+    2              0.000002   let before = 0
+                            
+    2              0.000014   let c = getline(c_lnum)[c_col - 1]
+    2              0.000025   let plist = split(&matchpairs, '.\zs[:,]')
+    2              0.000005   let i = index(plist, c)
+    2              0.000002   if i < 0
+                                " not found, in Insert mode try character before the cursor
+    2              0.000004     if c_col > 1 && (mode() == 'i' || mode() == 'R')
+                                  let before = 1
+                                  let c = getline(c_lnum)[c_col - 2]
+                                  let i = index(plist, c)
+                                endif
+    2              0.000002     if i < 0
+                                  " not found, nothing to do
+    2              0.000002       return
+                                endif
+                              endif
+                            
+                              " Figure out the arguments for searchpairpos().
+                              if i % 2 == 0
+                                let s_flags = 'nW'
+                                let c2 = plist[i + 1]
+                              else
+                                let s_flags = 'nbW'
+                                let c2 = c
+                                let c = plist[i - 1]
+                              endif
+                              if c == '['
+                                let c = '\['
+                                let c2 = '\]'
+                              endif
+                            
+                              " Find the match.  When it was just before the cursor move it there for a
+                              " moment.
+                              if before > 0
+                                let save_cursor = winsaveview()
+                                call cursor(c_lnum, c_col - before)
+                              endif
+                            
+                              " When not in a string or comment ignore matches inside them.
+                              " We match "escape" for special items, such as lispEscapeSpecial.
+                              let s_skip ='synIDattr(synID(line("."), col("."), 0), "name") ' . '=~?  "string\\|character\\|singlequote\\|escape\\|comment"'
+                              execute 'if' s_skip '| let s_skip = 0 | endif'
+                            
+                              " Limit the search to lines visible in the window.
+                              let stoplinebottom = line('w$')
+                              let stoplinetop = line('w0')
+                              if i % 2 == 0
+                                let stopline = stoplinebottom
+                              else
+                                let stopline = stoplinetop
+                              endif
+                            
+                              " Limit the search time to 300 msec to avoid a hang on very long lines.
+                              " This fails when a timeout is not supported.
+                              if mode() == 'i' || mode() == 'R'
+                                let timeout = exists("b:matchparen_insert_timeout") ? b:matchparen_insert_timeout : g:matchparen_insert_timeout
+                              else
+                                let timeout = exists("b:matchparen_timeout") ? b:matchparen_timeout : g:matchparen_timeout
+                              endif
+                              try
+                                let [m_lnum, m_col] = searchpairpos(c, '', c2, s_flags, s_skip, stopline, timeout)
+                              catch /E118/
+                                " Can't use the timeout, restrict the stopline a bit more to avoid taking
+                                " a long time on closed folds and long lines.
+                                " The "viewable" variables give a range in which we can scroll while
+                                " keeping the cursor at the same position.
+                                " adjustedScrolloff accounts for very large numbers of scrolloff.
+                                let adjustedScrolloff = min([&scrolloff, (line('w$') - line('w0')) / 2])
+                                let bottom_viewable = min([line('$'), c_lnum + &lines - adjustedScrolloff - 2])
+                                let top_viewable = max([1, c_lnum-&lines+adjustedScrolloff + 2])
+                                " one of these stoplines will be adjusted below, but the current values are
+                                " minimal boundaries within the current window
+                                if i % 2 == 0
+                                  if has("byte_offset") && has("syntax_items") && &smc > 0
+                            	let stopbyte = min([line2byte("$"), line2byte(".") + col(".") + &smc * 2])
+                            	let stopline = min([bottom_viewable, byte2line(stopbyte)])
+                                  else
+                            	let stopline = min([bottom_viewable, c_lnum + 100])
+                                  endif
+                                  let stoplinebottom = stopline
+                                else
+                                  if has("byte_offset") && has("syntax_items") && &smc > 0
+                            	let stopbyte = max([1, line2byte(".") + col(".") - &smc * 2])
+                            	let stopline = max([top_viewable, byte2line(stopbyte)])
+                                  else
+                            	let stopline = max([top_viewable, c_lnum - 100])
+                                  endif
+                                  let stoplinetop = stopline
+                                endif
+                                let [m_lnum, m_col] = searchpairpos(c, '', c2, s_flags, s_skip, stopline)
+                              endtry
+                            
+                              if before > 0
+                                call winrestview(save_cursor)
+                              endif
+                            
+                              " If a match is found setup match highlighting.
+                              if m_lnum > 0 && m_lnum >= stoplinetop && m_lnum <= stoplinebottom 
+                                exe '3match MatchParen /\(\%' . c_lnum . 'l\%' . (c_col - before) . 'c\)\|\(\%' . m_lnum . 'l\%' . m_col . 'c\)/'
+                                let w:paren_hl_on = 1
+                              endif
+
+FUNCTION  <SNR>58_SetUpCompleteopt()
+Called 3 times
+Total time:   0.000197
+ Self time:   0.000197
+
+count  total (s)   self (s)
+                              " Some plugins (I'm looking at you, vim-notes) change completeopt by for
+                              " instance adding 'longest'. This breaks YCM. So we force our settings.
+                              " There's no two ways about this: if you want to use YCM then you have to
+                              " have these completeopt settings, otherwise YCM won't work at all.
+                            
+                              " We need menuone in completeopt, otherwise when there's only one candidate
+                              " for completion, the menu doesn't show up.
+    3              0.000046   set completeopt-=menu
+    3              0.000018   set completeopt+=menuone
+                            
+                              " This is unnecessary with our features. People use this option to insert
+                              " the common prefix of all the matches and then add more differentiating chars
+                              " so that they can select a more specific match. With our features, they
+                              " don't need to insert the prefix; they just type the differentiating chars.
+                              " Also, having this option set breaks the plugin.
+    3              0.000016   set completeopt-=longest
+                            
+    3              0.000016   if g:ycm_add_preview_to_completeopt
+                                set completeopt+=preview
+                              endif
+
+FUNCTION  <SNR>58_OnFileReadyToParse()
+Called 4 times
+Total time:   0.004913
+ Self time:   0.004658
+
+count  total (s)   self (s)
+                              " We need to call this just in case there is no b:ycm_changetick; this can
+                              " happen for special buffers.
+    4   0.000131   0.000052   call s:SetUpYcmChangedTick()
+                            
+                              " Order is important here; we need to extract any done diagnostics before
+                              " reparsing the file again. If we sent the new parse request first, then
+                              " the response would always be pending when we called
+                              " UpdateDiagnosticNotifications.
+    4   0.000232   0.000056   call s:UpdateDiagnosticNotifications()
+                            
+    4              0.000034   let buffer_changed = b:changedtick != b:ycm_changedtick.file_ready_to_parse
+    4              0.000010   if buffer_changed
+    1              0.004385     py ycm_state.OnFileReadyToParse()
+    1              0.000003   endif
+    4              0.000030   let b:ycm_changedtick.file_ready_to_parse = b:changedtick
+
+FUNCTION  <SNR>58_SetUpYcmChangedTick()
+Called 4 times
+Total time:   0.000079
+ Self time:   0.000079
+
+count  total (s)   self (s)
+    4              0.000070   let b:ycm_changedtick  = get( b:, 'ycm_changedtick', {   'file_ready_to_parse' : -1, } )
+
+FUNCTION  <SNR>58_AllowedToCompleteInCurrentFile()
+Called 4 times
+Total time:   0.000360
+ Self time:   0.000360
+
+count  total (s)   self (s)
+    4              0.000115   if empty( &filetype ) || getbufvar( winbufnr( winnr() ), "&buftype" ) ==# 'nofile' || &filetype ==# 'qf'
+                                return 0
+                              endif
+                            
+    4              0.000030   if exists( 'b:ycm_largefile' )
+                                return 0
+                              endif
+                            
+    4              0.000063   let whitelist_allows = has_key( g:ycm_filetype_whitelist, '*' ) || has_key( g:ycm_filetype_whitelist, &filetype )
+    4              0.000032   let blacklist_allows = !has_key( g:ycm_filetype_blacklist, &filetype )
+                            
+    4              0.000022   return whitelist_allows && blacklist_allows
+
+FUNCTION  <SNR>58_OnCursorMovedNormalMode()
+Called 1 time
+Total time:   0.004789
+ Self time:   0.000319
+
+count  total (s)   self (s)
+    1   0.000031   0.000004   if !s:AllowedToCompleteInCurrentFile()
+                                return
+                              endif
+                            
+    1   0.004449   0.000006   call s:OnFileReadyToParse()
+    1              0.000307   py ycm_state.OnCursorMoved()
+
+FUNCTION  go#fmt#Format()
+Called 1 time
+Total time:   1.462693
+ Self time:   1.440716
+
+count  total (s)   self (s)
+                                " save cursor position and many other things
+    1              0.000017     let l:curw=winsaveview()
+                            
+                                " needed for testing if gofmt fails or not
+    1              0.000013     let l:tmpname=tempname()
+    1              0.001616     call writefile(getline(1,'$'), l:tmpname)
+                            
+                            
+    1              0.000008     if g:go_fmt_experimental == 1
+                                    " save our undo file to be restored after we are done. This is needed to
+                                    " prevent an additional undo jump due to BufWritePre auto command and also
+                                    " restore 'redo' history because it's getting being destroyed every
+                                    " BufWritePre
+                                    let tmpundofile=tempname()
+                                    exe 'wundo! ' . tmpundofile
+                                endif
+                            
+                                " get the command first so we can test it
+    1              0.000008     let fmt_command = g:go_fmt_command
+    1              0.000004     if a:withGoimport  == 1 
+                                    let fmt_command  = g:go_goimports_bin
+                                endif
+                            
+                                " if it's something else than gofmt, we need to check the existing of that
+                                " binary. For example if it's goimports, let us check if it's installed,
+                                " if not the user get's a warning via go#path#CheckBinPath()
+    1              0.000007     if fmt_command != "gofmt"
+                                    " check if the user has installed goimports
+                                    let bin_path = go#path#CheckBinPath(fmt_command) 
+                                    if empty(bin_path) 
+                                        return 
+                                    endif
+                            
+                                    " change GOPATH too, so goimports can pick up the correct library
+                                    let old_gopath = $GOPATH
+                                    let $GOPATH = go#path#Detect()
+                            
+                                    let fmt_command = bin_path
+                                endif
+                            
+                                " populate the final command with user based fmt options
+    1              0.000009     let command = fmt_command . ' ' . g:go_fmt_options
+                            
+                                " execute our command...
+    1   0.022095   0.000118     let out = system(command . " " . l:tmpname)
+    1              0.000152     let splitted = split(out, '\n')
+                            
+    1              0.000004     if fmt_command != "gofmt"
+                                    let $GOPATH = old_gopath
+                                endif
+                            
+                            
+                                "if there is no error on the temp file replace the output with the current
+                                "file (if this fails, we can always check the outputs first line with:
+                                "splitted =~ 'package \w\+')
+    1              0.000002     if v:shell_error == 0
+                                    " remove undo point caused via BufWritePre
+    1              0.000008         try | silent undojoin | catch | endtry
+                            
+                                    " do not include stderr to the buffer, this is due to goimports/gofmt
+                                    " tha fails with a zero exit return value (sad yeah).
+    1              0.000004         let default_srr = &srr
+    1              0.000005         set srr=>%s 
+                            
+                                    " delete any leftover before we replace the whole file. Suppose the
+                                    " file had 20 lines, but new output has 10 lines, only 1-10 are
+                                    " replaced with setline, remaining lines 11-20 won't get touched. So
+                                    " remove them.
+    1              0.000003         if line('$') > len(splitted)
+                                        execute len(splitted) .',$delete'
+                                    endif
+                            
+                                    " setline iterates over the list and replaces each line
+    1              1.438534         call setline(1, splitted)
+                            
+                                    " only clear quickfix if it was previously set, this prevents closing
+                                    " other quickfixes
+    1              0.000004         if s:got_fmt_error 
+                                        let s:got_fmt_error = 0
+                                        call setqflist([])
+                                        cwindow
+                                    endif
+                            
+                                    " put back the users srr setting
+    1              0.000005         let &srr = default_srr
+    1              0.000002     elseif g:go_fmt_fail_silently == 0 
+                                    "otherwise get the errors and put them to quickfix window
+                                    let errors = []
+                                    for line in splitted
+                                        let tokens = matchlist(line, '^\(.\{-}\):\(\d\+\):\(\d\+\)\s*\(.*\)')
+                                        if !empty(tokens)
+                                            call add(errors, {"filename": @%,"lnum":     tokens[2],"col":      tokens[3],"text":     tokens[4]})
+                                        endif
+                                    endfor
+                                    if empty(errors)
+                                        % | " Couldn't detect gofmt error format, output errors
+                                    endif
+                                    if !empty(errors)
+                                        call setqflist(errors, 'r')
+                                        echohl Error | echomsg "Gofmt returned error" | echohl None
+                                    endif
+                                    let s:got_fmt_error = 1
+                                    cwindow
+                                endif
+                            
+    1              0.000001     if g:go_fmt_experimental == 1
+                                    " restore our undo history
+                                    silent! exe 'rundo ' . tmpundofile
+                                    call delete(tmpundofile)
+                                endif
+                            
+                                " restore our cursor/windows positions
+    1              0.000026     call delete(l:tmpname)
+    1              0.000007     call winrestview(l:curw)
+
+FUNCTIONS SORTED ON TOTAL TIME
+count  total (s)   self (s)  function
+    1   1.462693   1.440716  go#fmt#Format()
+    4   0.004913   0.004658  <SNR>58_OnFileReadyToParse()
+    1   0.004789   0.000319  <SNR>58_OnCursorMovedNormalMode()
+    3   0.001224   0.000224  <SNR>58_OnCursorHold()
+    4   0.000360             <SNR>58_AllowedToCompleteInCurrentFile()
+    3   0.000197             <SNR>58_SetUpCompleteopt()
+    4   0.000176   0.000132  <SNR>58_UpdateDiagnosticNotifications()
+    2   0.000123             <SNR>40_Highlight_Matching_Pair()
+    4   0.000079             <SNR>58_SetUpYcmChangedTick()
+    4   0.000044             <SNR>58_DiagnosticUiSupportedForCurrentFiletype()
+
+FUNCTIONS SORTED ON SELF TIME
+count  total (s)   self (s)  function
+    1   1.462693   1.440716  go#fmt#Format()
+    4   0.004913   0.004658  <SNR>58_OnFileReadyToParse()
+    4              0.000360  <SNR>58_AllowedToCompleteInCurrentFile()
+    1   0.004789   0.000319  <SNR>58_OnCursorMovedNormalMode()
+    3   0.001224   0.000224  <SNR>58_OnCursorHold()
+    3              0.000197  <SNR>58_SetUpCompleteopt()
+    4   0.000176   0.000132  <SNR>58_UpdateDiagnosticNotifications()
+    2              0.000123  <SNR>40_Highlight_Matching_Pair()
+    4              0.000079  <SNR>58_SetUpYcmChangedTick()
+    4              0.000044  <SNR>58_DiagnosticUiSupportedForCurrentFiletype()
+

@@ -1,0 +1,4 @@
+Name = Letter { Anychar } .
+Letter = a | z | A | Z .
+Anychar = Letter | digit | "-" | "_" .
+digit = "0...9" .
