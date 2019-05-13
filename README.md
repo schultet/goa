@@ -16,6 +16,12 @@ distributed multi-agent planning system.
     ``` shell
     $GOPATH/src/github.com/schultet/goa
     ```
+    
+    or use the go tool `go get`:
+    
+    ``` shell
+    go get github.com/schultet/goa/src
+    ```
 
 2. install the required go packages
 
