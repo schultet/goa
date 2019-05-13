@@ -85,7 +85,7 @@ Example:
 ``` shell
     go test -v <package>
 ```
-    or
+   or
 
 ``` shell
     go test ./src/...
