@@ -10,25 +10,25 @@ distributed multi-agent planning system.
 
 
 ### Setup ###
+0. install Go if you haven't already. See [https://golang.org/doc/install](https://golang.org/doc/install)
+1. clone the repository. Make sure it is located in your $GOPATH correctly, i.e.:
 
-1. clone the repository
+    ``` shell
+    $GOPATH/src/github.com/schultet/goa
+    ```
+
 2. install the required go packages
 
     ``` shell
+    cd $GOPATH/src/github.com/schultet/goa/src/
     go get [-u]
     ```
 3. install vendor code
 
     ``` shell
-    cd vendor
+    cd $GOPATH/src/github.com/schultet/goa/vendor/
     make nanomsg
     make nanomsg4py
-    ```
-4. export nanomsg library path for python
-
-    ``` shell
-    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH":vendor/nanomsg/build/lib/ && \
-    export PYTHONPATH="$PYTHONPATH":vendor/nanomsg4py
     ```
 
 
