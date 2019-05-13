@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/nanocat.dir/tools/nanocat.c.o CMakeFiles/nanocat.dir/tools/options.c.o  -o nanocat -rdynamic libnanomsg.so.1.0.0 -lanl -lrt -lpthread -lnsl -lpthread -Wl,-rpath,/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg: 

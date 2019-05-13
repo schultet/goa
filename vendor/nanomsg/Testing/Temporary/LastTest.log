@@ -1,0 +1,675 @@
+Start testing: Mar 05 11:21 CET
+----------------------------------------------------------
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/inproc
+1/42 Testing: inproc
+1/42 Test: inproc
+Command: "" "12100"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"inproc" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"inproc" end time: Mar 05 11:21 CET
+"inproc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/inproc_shutdown
+2/42 Testing: inproc_shutdown
+2/42 Test: inproc_shutdown
+Command: "" "12110"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"inproc_shutdown" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"inproc_shutdown" end time: Mar 05 11:21 CET
+"inproc_shutdown" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/ipc
+3/42 Testing: ipc
+3/42 Test: ipc
+Command: "" "12120"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"ipc" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ipc" end time: Mar 05 11:21 CET
+"ipc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/ipc_shutdown
+4/42 Testing: ipc_shutdown
+4/42 Test: ipc_shutdown
+Command: "" "12130"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"ipc_shutdown" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ipc_shutdown" end time: Mar 05 11:21 CET
+"ipc_shutdown" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/ipc_stress
+5/42 Testing: ipc_stress
+5/42 Test: ipc_stress
+Command: "" "12140"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"ipc_stress" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ipc_stress" end time: Mar 05 11:21 CET
+"ipc_stress" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/tcp
+6/42 Testing: tcp
+6/42 Test: tcp
+Command: "" "12150"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"tcp" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"tcp" end time: Mar 05 11:21 CET
+"tcp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/tcp_shutdown
+7/42 Testing: tcp_shutdown
+7/42 Test: tcp_shutdown
+Command: "" "12160"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"tcp_shutdown" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"tcp_shutdown" end time: Mar 05 11:21 CET
+"tcp_shutdown" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/ws
+8/42 Testing: ws
+8/42 Test: ws
+Command: "" "12170"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"ws" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ws" end time: Mar 05 11:21 CET
+"ws" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/pair
+9/42 Testing: pair
+9/42 Test: pair
+Command: "" "12180"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"pair" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"pair" end time: Mar 05 11:21 CET
+"pair" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/pubsub
+10/42 Testing: pubsub
+10/42 Test: pubsub
+Command: "" "12190"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"pubsub" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"pubsub" end time: Mar 05 11:21 CET
+"pubsub" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/reqrep
+11/42 Testing: reqrep
+11/42 Test: reqrep
+Command: "" "12200"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"reqrep" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"reqrep" end time: Mar 05 11:21 CET
+"reqrep" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/pipeline
+12/42 Testing: pipeline
+12/42 Test: pipeline
+Command: "" "12210"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"pipeline" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"pipeline" end time: Mar 05 11:21 CET
+"pipeline" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/survey
+13/42 Testing: survey
+13/42 Test: survey
+Command: "" "12220"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"survey" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"survey" end time: Mar 05 11:21 CET
+"survey" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/bus
+14/42 Testing: bus
+14/42 Test: bus
+Command: "" "12230"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"bus" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"bus" end time: Mar 05 11:21 CET
+"bus" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/async_shutdown
+15/42 Testing: async_shutdown
+15/42 Test: async_shutdown
+Command: "" "12240"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"async_shutdown" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"async_shutdown" end time: Mar 05 11:21 CET
+"async_shutdown" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/block
+16/42 Testing: block
+16/42 Test: block
+Command: "" "12250"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"block" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"block" end time: Mar 05 11:21 CET
+"block" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/term
+17/42 Testing: term
+17/42 Test: term
+Command: "" "12260"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"term" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"term" end time: Mar 05 11:21 CET
+"term" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/timeo
+18/42 Testing: timeo
+18/42 Test: timeo
+Command: "" "12270"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"timeo" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"timeo" end time: Mar 05 11:21 CET
+"timeo" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/iovec
+19/42 Testing: iovec
+19/42 Test: iovec
+Command: "" "12280"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"iovec" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"iovec" end time: Mar 05 11:21 CET
+"iovec" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/msg
+20/42 Testing: msg
+20/42 Test: msg
+Command: "" "12290"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"msg" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"msg" end time: Mar 05 11:21 CET
+"msg" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/prio
+21/42 Testing: prio
+21/42 Test: prio
+Command: "" "12300"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"prio" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"prio" end time: Mar 05 11:21 CET
+"prio" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/poll
+22/42 Testing: poll
+22/42 Test: poll
+Command: "" "12310"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"poll" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"poll" end time: Mar 05 11:21 CET
+"poll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/device
+23/42 Testing: device
+23/42 Test: device
+Command: "" "12320"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"device" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"device" end time: Mar 05 11:21 CET
+"device" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/device4
+24/42 Testing: device4
+24/42 Test: device4
+Command: "" "12330"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"device4" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"device4" end time: Mar 05 11:21 CET
+"device4" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/device5
+25/42 Testing: device5
+25/42 Test: device5
+Command: "" "12340"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"device5" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"device5" end time: Mar 05 11:21 CET
+"device5" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/device6
+26/42 Testing: device6
+26/42 Test: device6
+Command: "" "12350"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"device6" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"device6" end time: Mar 05 11:21 CET
+"device6" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/device7
+27/42 Testing: device7
+27/42 Test: device7
+Command: "" "12360"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"device7" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"device7" end time: Mar 05 11:21 CET
+"device7" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/emfile
+28/42 Testing: emfile
+28/42 Test: emfile
+Command: "" "12370"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"emfile" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"emfile" end time: Mar 05 11:21 CET
+"emfile" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/domain
+29/42 Testing: domain
+29/42 Test: domain
+Command: "" "12380"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"domain" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"domain" end time: Mar 05 11:21 CET
+"domain" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/trie
+30/42 Testing: trie
+30/42 Test: trie
+Command: "" "12390"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"trie" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"trie" end time: Mar 05 11:21 CET
+"trie" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/list
+31/42 Testing: list
+31/42 Test: list
+Command: "" "12400"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"list" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"list" end time: Mar 05 11:21 CET
+"list" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/hash
+32/42 Testing: hash
+32/42 Test: hash
+Command: "" "12410"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"hash" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"hash" end time: Mar 05 11:21 CET
+"hash" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/stats
+33/42 Testing: stats
+33/42 Test: stats
+Command: "" "12420"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"stats" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"stats" end time: Mar 05 11:21 CET
+"stats" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/symbol
+34/42 Testing: symbol
+34/42 Test: symbol
+Command: "" "12430"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"symbol" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"symbol" end time: Mar 05 11:21 CET
+"symbol" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/separation
+35/42 Testing: separation
+35/42 Test: separation
+Command: "" "12440"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"separation" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"separation" end time: Mar 05 11:21 CET
+"separation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/zerocopy
+36/42 Testing: zerocopy
+36/42 Test: zerocopy
+Command: "" "12450"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"zerocopy" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"zerocopy" end time: Mar 05 11:21 CET
+"zerocopy" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/shutdown
+37/42 Testing: shutdown
+37/42 Test: shutdown
+Command: "" "12460"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"shutdown" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"shutdown" end time: Mar 05 11:21 CET
+"shutdown" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/cmsg
+38/42 Testing: cmsg
+38/42 Test: cmsg
+Command: "" "12470"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"cmsg" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"cmsg" end time: Mar 05 11:21 CET
+"cmsg" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/bug328
+39/42 Testing: bug328
+39/42 Test: bug328
+Command: "" "12480"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"bug328" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"bug328" end time: Mar 05 11:21 CET
+"bug328" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/ws_async_shutdown
+40/42 Testing: ws_async_shutdown
+40/42 Test: ws_async_shutdown
+Command: "" "12490"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"ws_async_shutdown" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ws_async_shutdown" end time: Mar 05 11:21 CET
+"ws_async_shutdown" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/reqttl
+41/42 Testing: reqttl
+41/42 Test: reqttl
+Command: "" "12500"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"reqttl" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"reqttl" end time: Mar 05 11:21 CET
+"reqttl" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/surveyttl
+42/42 Testing: surveyttl
+42/42 Test: surveyttl
+Command: "" "12510"
+Directory: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg
+"surveyttl" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"surveyttl" end time: Mar 05 11:21 CET
+"surveyttl" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 05 11:21 CET

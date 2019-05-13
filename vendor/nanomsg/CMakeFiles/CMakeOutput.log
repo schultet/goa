@@ -1,0 +1,512 @@
+The system is: Linux - 4.4.0-112-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/3.5.1/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_80db3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_80db3.dir/build.make CMakeFiles/cmTC_80db3.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_80db3.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_80db3.dir/testCCompiler.c.o   -c /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_80db3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80db3.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_80db3.dir/testCCompiler.c.o  -o cmTC_80db3 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_72415/fast"
+/usr/bin/make -f CMakeFiles/cmTC_72415.dir/build.make CMakeFiles/cmTC_72415.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_72415.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_72415.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_72415
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72415.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_72415.dir/CMakeCCompilerABI.c.o  -o cmTC_72415 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.9' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_72415' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWPn4Fb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_72415 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_72415.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_72415/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_72415.dir/build.make CMakeFiles/cmTC_72415.dir/build]
+  ignore line: [make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_72415.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_72415.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_72415]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72415.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_72415.dir/CMakeCCompilerABI.c.o  -o cmTC_72415 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.9' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_72415' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWPn4Fb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_72415 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_72415.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccWPn4Fb.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_72415] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
+    arg [CMakeFiles/cmTC_72415.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5] ==> [/usr/lib/gcc/x86_64-linux-gnu/5]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/5;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4090a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4090a.dir/build.make CMakeFiles/cmTC_4090a.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4090a.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_4090a.dir/feature_tests.c.o   -c /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/feature_tests.c
+Linking C executable cmTC_4090a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4090a.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_4090a.dir/feature_tests.c.o  -o cmTC_4090a -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4d5d6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4d5d6.dir/build.make CMakeFiles/cmTC_4d5d6.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4d5d6.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_4d5d6.dir/feature_tests.c.o   -c /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/feature_tests.c
+Linking C executable cmTC_4d5d6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4d5d6.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_4d5d6.dir/feature_tests.c.o  -o cmTC_4d5d6 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a617b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a617b.dir/build.make CMakeFiles/cmTC_a617b.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a617b.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_a617b.dir/feature_tests.c.o   -c /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a617b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a617b.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_a617b.dir/feature_tests.c.o  -o cmTC_a617b -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ecc3d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ecc3d.dir/build.make CMakeFiles/cmTC_ecc3d.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ecc3d.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_ecc3d.dir/CheckIncludeFile.c.o   -c /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ecc3d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ecc3d.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_ecc3d.dir/CheckIncludeFile.c.o  -o cmTC_ecc3d -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a1170/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a1170.dir/build.make CMakeFiles/cmTC_a1170.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a1170.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_a1170.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a1170
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1170.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_a1170.dir/CheckFunctionExists.c.o  -o cmTC_a1170 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function socketpair exists passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_05314/fast"
+/usr/bin/make -f CMakeFiles/cmTC_05314.dir/build.make CMakeFiles/cmTC_05314.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_05314.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=socketpair   -o CMakeFiles/cmTC_05314.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_05314
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05314.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=socketpair    CMakeFiles/cmTC_05314.dir/CheckFunctionExists.c.o  -o cmTC_05314 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function eventfd exists passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_07dd4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_07dd4.dir/build.make CMakeFiles/cmTC_07dd4.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_07dd4.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=eventfd   -o CMakeFiles/cmTC_07dd4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_07dd4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07dd4.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=eventfd    CMakeFiles/cmTC_07dd4.dir/CheckFunctionExists.c.o  -o cmTC_07dd4 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pipe exists passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_862fd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_862fd.dir/build.make CMakeFiles/cmTC_862fd.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_862fd.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pipe   -o CMakeFiles/cmTC_862fd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_862fd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_862fd.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pipe    CMakeFiles/cmTC_862fd.dir/CheckFunctionExists.c.o  -o cmTC_862fd -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pipe2 exists passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_57175/fast"
+/usr/bin/make -f CMakeFiles/cmTC_57175.dir/build.make CMakeFiles/cmTC_57175.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_57175.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pipe2   -o CMakeFiles/cmTC_57175.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_57175
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57175.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pipe2    CMakeFiles/cmTC_57175.dir/CheckFunctionExists.c.o  -o cmTC_57175 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function accept4 exists passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e5e60/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e5e60.dir/build.make CMakeFiles/cmTC_e5e60.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e5e60.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=accept4   -o CMakeFiles/cmTC_e5e60.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e5e60
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5e60.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=accept4    CMakeFiles/cmTC_e5e60.dir/CheckFunctionExists.c.o  -o cmTC_e5e60 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function epoll_create exists passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c6b07/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c6b07.dir/build.make CMakeFiles/cmTC_c6b07.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c6b07.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=epoll_create   -o CMakeFiles/cmTC_c6b07.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c6b07
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6b07.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=epoll_create    CMakeFiles/cmTC_c6b07.dir/CheckFunctionExists.c.o  -o cmTC_c6b07 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function poll exists passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_735e5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_735e5.dir/build.make CMakeFiles/cmTC_735e5.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_735e5.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=poll   -o CMakeFiles/cmTC_735e5.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_735e5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_735e5.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=poll    CMakeFiles/cmTC_735e5.dir/CheckFunctionExists.c.o  -o cmTC_735e5 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function getaddrinfo_a exists in the anl passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d106c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d106c.dir/build.make CMakeFiles/cmTC_d106c.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d106c.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=getaddrinfo_a   -o CMakeFiles/cmTC_d106c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d106c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d106c.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=getaddrinfo_a    CMakeFiles/cmTC_d106c.dir/CheckFunctionExists.c.o  -o cmTC_d106c -rdynamic -lanl 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function clock_gettime exists in the rt passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_33cdc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_33cdc.dir/build.make CMakeFiles/cmTC_33cdc.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_33cdc.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=clock_gettime   -o CMakeFiles/cmTC_33cdc.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_33cdc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33cdc.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=clock_gettime    CMakeFiles/cmTC_33cdc.dir/CheckFunctionExists.c.o  -o cmTC_33cdc -rdynamic -lrt 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function sem_wait exists in the pthread passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f8f43/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f8f43.dir/build.make CMakeFiles/cmTC_f8f43.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f8f43.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=sem_wait   -o CMakeFiles/cmTC_f8f43.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f8f43
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8f43.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sem_wait    CMakeFiles/cmTC_f8f43.dir/CheckFunctionExists.c.o  -o cmTC_f8f43 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the function gethostbyname exists in the nsl passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3b82b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3b82b.dir/build.make CMakeFiles/cmTC_3b82b.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3b82b.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_3b82b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3b82b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b82b.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_3b82b.dir/CheckFunctionExists.c.o  -o cmTC_3b82b -rdynamic -lnsl 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+
+Determining if the CLOCK_MONOTONIC exist passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_708ca/fast"
+/usr/bin/make -f CMakeFiles/cmTC_708ca.dir/build.make CMakeFiles/cmTC_708ca.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_708ca.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_708ca.dir/CheckSymbolExists.c.o   -c /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_708ca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_708ca.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_708ca.dir/CheckSymbolExists.c.o  -o cmTC_708ca -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+File /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <time.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CLOCK_MONOTONIC
+  return ((int*)(&CLOCK_MONOTONIC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the AF_UNIX exist passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a30a5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a30a5.dir/build.make CMakeFiles/cmTC_a30a5.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a30a5.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_a30a5.dir/CheckSymbolExists.c.o   -c /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a30a5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a30a5.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_a30a5.dir/CheckSymbolExists.c.o  -o cmTC_a30a5 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+File /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/socket.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef AF_UNIX
+  return ((int*)(&AF_UNIX))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the backtrace_symbols_fd exist passed with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_90fd9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_90fd9.dir/build.make CMakeFiles/cmTC_90fd9.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_90fd9.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_90fd9.dir/CheckSymbolExists.c.o   -c /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_90fd9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90fd9.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_90fd9.dir/CheckSymbolExists.c.o  -o cmTC_90fd9 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+File /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <execinfo.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef backtrace_symbols_fd
+  return ((int*)(&backtrace_symbols_fd))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test NN_HAVE_MSG_CONTROL succeeded with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bb1a8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bb1a8.dir/build.make CMakeFiles/cmTC_bb1a8.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bb1a8.dir/src.c.o
+/usr/bin/cc    -DNN_HAVE_MSG_CONTROL   -o CMakeFiles/cmTC_bb1a8.dir/src.c.o   -c /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_bb1a8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb1a8.dir/link.txt --verbose=1
+/usr/bin/cc   -DNN_HAVE_MSG_CONTROL    CMakeFiles/cmTC_bb1a8.dir/src.c.o  -o cmTC_bb1a8 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <sys/socket.h>
+
+int main()
+{
+   (void)sizeof(((struct msghdr *)0)->msg_control);
+   return 0;
+}
+
+Performing C SOURCE FILE Test NN_HAVE_GCC_ATOMIC_BUILTINS succeeded with the following output:
+Change Dir: /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2f8a6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2f8a6.dir/build.make CMakeFiles/cmTC_2f8a6.dir/build
+make[1]: Entering directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2f8a6.dir/src.c.o
+/usr/bin/cc    -DNN_HAVE_GCC_ATOMIC_BUILTINS   -o CMakeFiles/cmTC_2f8a6.dir/src.c.o   -c /home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2f8a6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f8a6.dir/link.txt --verbose=1
+/usr/bin/cc   -DNN_HAVE_GCC_ATOMIC_BUILTINS    CMakeFiles/cmTC_2f8a6.dir/src.c.o  -o cmTC_2f8a6 -rdynamic 
+make[1]: Leaving directory '/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+    #include <stdint.h>
+    int main()
+    {
+        volatile uint32_t n = 0;
+        __sync_fetch_and_add (&n, 1);
+        __sync_fetch_and_sub (&n, 1);
+        return 0;
+    }
+

@@ -1,0 +1,48 @@
+BASEPATH_ := $(dir $(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST)))
+
+CC ?= gcc
+PYTHON2 ?= python2
+
+SYSTEM = $(shell uname)
+
+SYSTEM_LDFLAGS =
+
+DEBUG ?= no
+PROFIL ?= no
+WERROR ?= no
+
+ifeq '$(PROFIL)' 'yes'
+  DEBUG = yes
+endif
+
+ifeq '$(DEBUG)' 'yes'
+  CFLAGS = -g -Wno-unused-function
+else
+  # force to use optimizations
+  CFLAGS += -O3
+endif
+ifeq '$(PROFIL)' 'yes'
+  CFLAGS += -pg
+endif
+CFLAGS += -Wall -pedantic --std=gnu99
+
+ifeq '$(WERROR)' 'yes'
+  CFLAGS += -Werror
+endif
+
+LDFLAGS += $(SYSTEM_LDFLAGS)
+
+PYTHON_CFLAGS ?= $(shell pkg-config --cflags python-2.7)
+PYTHON_LDFLAGS ?= $(shell pkg-config --libs python-2.7)
+
+#NANOMSG_PATH_ := $(BASEPATH_)/third-party/nanomsg
+#NANOMSG_LIBPATH_ := $(NANOMSG_PATH_)/build/lib
+NANOMSG_PATH_ := ../nanomsg
+NANOMSG_LIBPATH_ := $(NANOMSG_PATH_)/build/lib
+USE_LOCAL_NANOMSG ?= $(shell if test -f $(NANOMSG_LIBPATH_)/libnanomsg.a; then echo "yes"; else echo "no"; fi;)
+NANOMSG_CFLAGS ?= $(shell PKG_CONFIG_PATH=$(NANOMSG_LIBPATH_)/pkgconfig pkg-config --cflags libnanomsg)
+NANOMSG_LDFLAGS ?= $(shell PKG_CONFIG_PATH=$(NANOMSG_LIBPATH_)/pkgconfig pkg-config --libs libnanomsg)
+NANOMSG_CFLAGS := -I$(NANOMSG_PATH_)/build/include
+NANOMSG_LDFLAGS := -L$(NANOMSG_LIBPATH_) -lnanomsg -lanl -lrt
+
+.DEFAULT_GOAL := all

@@ -1,0 +1,95 @@
+/***
+ * maplan
+ * -------
+ * Copyright (c)2015 Daniel Fiser <danfis@danfis.cz>,
+ * Agent Technology Center, Department of Computer Science,
+ * Faculty of Electrical Engineering, Czech Technical University in Prague.
+ * All rights reserved.
+ *
+ * This file is part of maplan.
+ *
+ * Distributed under the OSI-approved BSD License (the "License");
+ * see accompanying file BDS-LICENSE for details or see
+ * <http://www.opensource.org/licenses/bsd-license.php>.
+ *
+ * This software is distributed WITHOUT ANY WARRANTY; without even the
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the License for more information.
+ */
+
+/**
+ * Pair of variable ID and its value.
+ */
+message PlanProblemVarVal {
+    // ID of the variable
+    required int32 var = 1;
+    // Variable's value
+    required int32 val = 2;
+}
+
+/**
+ * Definition of a single state
+ */
+message PlanProblemState {
+    // Values assigned to each variable
+    repeated int32 val = 1;
+}
+
+/**
+ * Definition of a partial state
+ */
+message PlanProblemPartState {
+    // Variables with assigned values
+    repeated PlanProblemVarVal val = 1;
+}
+
+/**
+ * Definition of a variable.
+ */
+message PlanProblemVar {
+    required string name = 1;
+    required int32 range = 2;
+    repeated string fact_name = 3;
+    optional bool is_private = 4;
+}
+
+/**
+ * Definition of a mutex group.
+ */
+message PlanProblemMutex {
+    repeated PlanProblemVarVal fact = 1;
+}
+
+/**
+ * Definition of conditional effects.
+ */
+message PlanProblemCondEff {
+    required PlanProblemPartState pre = 1;
+    required PlanProblemPartState eff = 2;
+}
+
+/**
+ * Definition of an operator.
+ */
+message PlanProblemOperator {
+    required string name = 1;
+    required int32 cost = 2;
+    required PlanProblemPartState pre = 3;
+    required PlanProblemPartState eff = 4;
+    repeated PlanProblemCondEff cond_eff = 5;
+    optional int32 owner = 6;
+    optional int32 global_id = 7;
+    optional bool is_private = 8;
+}
+
+message PlanProblem {
+    required int32 version = 1;
+    repeated PlanProblemVar var = 2;
+    repeated PlanProblemMutex mutex = 3;
+    required PlanProblemState init_state = 4;
+    required PlanProblemPartState goal = 5;
+    repeated PlanProblemOperator operator = 6;
+    repeated string agent_name = 7;
+    repeated PlanProblemOperator projected_operator = 8;
+    optional int32 agent_id = 9;
+}

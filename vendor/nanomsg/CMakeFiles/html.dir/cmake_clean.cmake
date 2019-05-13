@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/html"
+  "nanocat.1.html"
+  "nn_errno.3.html"
+  "nn_strerror.3.html"
+  "nn_symbol.3.html"
+  "nn_symbol_info.3.html"
+  "nn_allocmsg.3.html"
+  "nn_reallocmsg.3.html"
+  "nn_freemsg.3.html"
+  "nn_socket.3.html"
+  "nn_close.3.html"
+  "nn_get_statistic.3.html"
+  "nn_getsockopt.3.html"
+  "nn_setsockopt.3.html"
+  "nn_bind.3.html"
+  "nn_connect.3.html"
+  "nn_shutdown.3.html"
+  "nn_send.3.html"
+  "nn_recv.3.html"
+  "nn_sendmsg.3.html"
+  "nn_recvmsg.3.html"
+  "nn_device.3.html"
+  "nn_cmsg.3.html"
+  "nn_poll.3.html"
+  "nanomsg.7.html"
+  "nn_pair.7.html"
+  "nn_reqrep.7.html"
+  "nn_pubsub.7.html"
+  "nn_survey.7.html"
+  "nn_pipeline.7.html"
+  "nn_bus.7.html"
+  "nn_inproc.7.html"
+  "nn_ipc.7.html"
+  "nn_tcp.7.html"
+  "nn_ws.7.html"
+  "nn_env.7.html"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/html.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

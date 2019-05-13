@@ -1,0 +1,43 @@
+; whatever
+
+(define (problem whatever-prob)
+  (:domain whatever)
+  (:objects
+     bb - bar
+  )
+  (:init
+    (unused a)
+    (unused b)
+    (unused c)
+    (unused d)
+    (unused e)
+    (unused f)
+    (unused g)
+    (unused h)
+    (unused i)
+    (unused j)
+    (unused k)
+    (unused l)
+    (unused m)
+    (unused n)
+    (unused o)
+    (unused p)
+    (unused q)
+    (unused r)
+    (unused s)
+    (unused t)
+    (unused u)
+    (unused v)
+    (unused w)
+    (unused x)
+    (unused y)
+    (unused z)
+    (not (done bb))
+  )
+  (:goal
+    (and
+      (done bb)
+    )
+  )
+  (:metric minimize (total-cost))
+)

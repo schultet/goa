@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/ws_async_shutdown.dir/tests/ws_async_shutdown.c.o  -o ws_async_shutdown -rdynamic libnanomsg.so.1.0.0 -lanl -lrt -lpthread -lnsl -lpthread -Wl,-rpath,/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg 

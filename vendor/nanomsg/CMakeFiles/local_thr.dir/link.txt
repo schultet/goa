@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/local_thr.dir/perf/local_thr.c.o  -o local_thr -rdynamic libnanomsg.so.1.0.0 -lanl -lrt -lpthread -lnsl -lpthread -Wl,-rpath,/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg 
