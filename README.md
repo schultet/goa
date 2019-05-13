@@ -11,7 +11,13 @@ distributed multi-agent planning system.
 
 ### Setup ###
 0. install Go if you haven't already. See [https://golang.org/doc/install](https://golang.org/doc/install)
-1. clone the repository. Make sure it is located in your $GOPATH correctly I.e.:
+1. clone the repository. Either using the go tool `go get`:
+        
+    ``` shell
+    go get github.com/schultet/goa/src
+    ```
+
+    or manually using `git clone`, making sure it is located in the $GOPATH correctly. I.e.:
 
     ``` shell
     mkdir -p $GOPATH/src/github.com/schultet/
@@ -19,11 +25,7 @@ distributed multi-agent planning system.
     git clone https://github.com/schultet/goa.git
     ```
     
-    or use the go tool `go get`:
-    
-    ``` shell
-    go get github.com/schultet/goa/src
-    ```
+
 
 2. install the required go packages
 
