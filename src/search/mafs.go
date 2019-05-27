@@ -1,6 +1,7 @@
 package search
 
 import (
+	"encoding/gob"
 	"fmt"
 	"log"
 	"math/rand"
@@ -352,6 +353,8 @@ func (bfs *Mafs) processStateMessage(m *MafsMessage) {
 
 // register mafs strategies
 func init() {
+	// we need to tell gob about the concrete message type used by the search
+	gob.Register(&MafsMessage{})
 	// cmd options for MAFS strategies
 	mafsOptions := func() *opt.OptionSet {
 		opts := opt.NewOptionSet()

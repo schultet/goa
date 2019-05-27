@@ -18,7 +18,6 @@ def tq(ls):
 def progress(ls):
     """If tqdm is installed, return wrapped iterable to display progress bar."""
     try:
-        assert False
         from tqdm import tqdm
         return tqdm(ls)
     except:

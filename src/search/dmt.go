@@ -1,6 +1,7 @@
 package search
 
 import (
+	"encoding/gob"
 	"fmt"
 	"log"
 	"math"
@@ -334,6 +335,7 @@ func (d *Dmt) defaultInitialize(s state.State, n *DmtNode) {
 	if d.lazy {
 		h = d.heuristic.Evaluate(s)
 		n.h = h
+		d.info.setHeuristicValue(h) // update progress
 	}
 	applicableActions := d.actionPruner.Prune(&s, d.succ.ApplicableActions(s))
 	for _, o := range applicableActions {
@@ -398,8 +400,8 @@ func (d *Dmt) defaultInitialize(s state.State, n *DmtNode) {
 			//log.Fatalf("ende")
 		}
 
+		d.info.setHeuristicValue(h) // update progress
 	}
-	d.info.setHeuristicValue(h) // update progress
 }
 
 // selection strategy similar to ucb1 for cp
@@ -568,6 +570,8 @@ func processMessageDmt(d *Dmt, m *DmtMessage) {
 
 // init registers dmt strategies
 func init() {
+	// we need to tell gob about the concrete message type used by the search
+	gob.Register(&DmtMessage{})
 	// options to be parsed for all dmt strategies
 	dmtOptions := func() *opt.OptionSet {
 		opts := opt.NewOptionSet()

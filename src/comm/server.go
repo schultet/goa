@@ -216,6 +216,15 @@ L:
 	}
 }
 
+func interfaceDecode(dec *gob.Decoder) Message {
+	var m Message
+	err := dec.Decode(&m)
+	if err != nil {
+		log.Fatal("decode:", err)
+	}
+	return m
+}
+
 func (s *TCPServer) handle(c net.Conn) { //, ch chan Message) {
 	dec := gob.NewDecoder(c)
 	var agentID int
@@ -229,8 +238,8 @@ func (s *TCPServer) handle(c net.Conn) { //, ch chan Message) {
 
 L:
 	for {
-		var m Message
-		err := dec.Decode(&m)
+		m := interfaceDecode(dec)
+
 		if err != nil && err != io.EOF {
 			log.Printf("m = %+v\nerr = %+v\n%T\n", m, err, err)
 			continue
@@ -255,7 +264,6 @@ func (s *TCPServer) Quit() {
 // When the server receives a message of the registered type, it is forwarded to
 // the registered channel.
 func (s *TCPServer) RegisterMessageChan(t interface{}, ch chan interface{}) {
-	gob.Register(reflect.TypeOf(t))
 	h := func(m interface{}) bool {
 		if reflect.TypeOf(m) == reflect.TypeOf(t) {
 			ch <- m

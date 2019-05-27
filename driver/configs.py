@@ -8,6 +8,12 @@ configs.update({
     "mafs":   ["-s", "-s mafs-g  -h ff -l 1", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
     "dmtg":   ["-s", "-s dmt-bfs -h ff -l 1", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
     "dmtb":   ["-s", "-s dmt-gus -h ff -l 1", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
+    "mafs-tcp":   ["-s", "-s mafs-g  -h ff -l 1", "--heuristic", "ff", "--planlimit", "1"],
+    "mafs-tcp+":   ["-s", "-s mafs-g  -h ff -l 1", "--heuristic", "ff", "--planlimit", "100"],
+    "dmtg-tcp":   ["-s", "-s dmt-bfs -h ff -l 1", "--heuristic", "ff", "--planlimit", "1"],
+    "dmtb-tcp":   ["-s", "-s dmt-gus -h ff -l 1", "--heuristic", "ff", "--planlimit", "1"],
+    "dmtg-unit": ["-s", "-s dmt-bfs -h ff -l 1 --costtype 1", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
+    "dmtg-gc": ["-s", "-s dmt-bfs -h gc -l 1 --costtype 1", "--heuristic", "gc", "--threaded", "--planlimit", "1"],
 })
 
 configs.update({

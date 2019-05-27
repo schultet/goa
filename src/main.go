@@ -29,6 +29,12 @@ var (
 )
 
 func main() {
+	//gob.Register(&search.TextMessage{})
+	//gob.Register(&search.XMessage{})
+	//gob.Register(&search.MafsMessage{})
+	//gob.Register(&search.DmtMessage{})
+	//gob.Register(&search.StateActionMessage{})
+
 	//defer profile.Start(profile.CPUProfile, profile.ProfilePath("."), profile.NoShutdownHook).Stop()
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	Execute()

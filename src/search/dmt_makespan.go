@@ -6,6 +6,7 @@
 package search
 
 import (
+	"encoding/gob"
 	"fmt"
 	"log"
 	"math"
@@ -906,6 +907,8 @@ func greedyProcessStateActionMessage(d *DmtMakespan, m *StateActionMessage) {
 
 // init registers dmt strategies
 func init() {
+	// we need to tell gob about the concrete message type used by the search
+	gob.Register(&StateActionMessage{})
 	// options to be parsed for all dmt strategies
 	dmtMakespanOptions := func() *opt.OptionSet {
 		opts := opt.NewOptionSet()

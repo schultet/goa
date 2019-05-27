@@ -1,6 +1,7 @@
 package search
 
 import (
+	"encoding/gob"
 	"fmt"
 	"io"
 	"log"
@@ -118,6 +119,11 @@ func NewEngine(t *task.Task, server comm.Server, dispatcher comm.Dispatcher,
 		xMessages:       make(chan interface{}, 100),
 	}
 	e.planRegistry = NewPlanRegistry(e)
+	//gob.Register(&TextMessage{})
+	//gob.Register(&XMessage{})
+	//gob.Register(&MafsMessage{})
+	//gob.Register(&DmtMessage{})
+	//gob.Register(&StateActionMessage{})
 	e.server.RegisterMessageChan(&TextMessage{}, e.textMessages)
 	e.server.RegisterMessageChan(&PlanExtractionMessage{}, e.extractMessages)
 	e.server.RegisterMessageChan(&XMessage{}, e.xMessages)
@@ -216,4 +222,11 @@ func Successor(s state.State, o *task.Action) state.State {
 		succ[eff.Variable] = int(eff.Value)
 	}
 	return succ
+}
+
+func init() {
+	// we have to register all of the used message types
+	gob.Register(&TextMessage{})
+	gob.Register(&XMessage{})
+	gob.Register(&StateActionMessage{})
 }

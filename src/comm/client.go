@@ -141,24 +141,29 @@ func (c *Client) connect(service string, waitMs, tries int) {
 		reconnects, c.agentID)
 }
 
+func interfaceEncode(enc *gob.Encoder, m Message) {
+	err := enc.Encode(&m)
+	if err != nil {
+		log.Fatal("encode:", err)
+	}
+}
+
 // TODO: make this (sending) safer, adjust select cases for reconnection
 // run transmits messages received on the outgoing chan via c.conn
 func (c *Client) run() {
 	enc := gob.NewEncoder(c.conn)
-	//c.conn.Write([]byte{byte(c.agentID), MaxByte}) // identify to server
 	err := enc.Encode(&c.agentID)
+	if err != nil {
+		log.Fatalf("fooo failed for %v: %s", err, err)
+	}
 L:
-	for { //msg := range c.outgoing {
+	for {
 		select {
 		case <-c.quit:
 			c.conn.Close()
 			break L
 		case msg := <-c.outgoing:
-			err = enc.Encode(&msg)
-			if err != nil {
-				log.Fatalf("MarshalBinary failed for %v: %s", msg, err)
-			}
-			//c.conn.Write(binMSG)
+			interfaceEncode(enc, msg)
 		default:
 		}
 	}
