@@ -38,6 +38,10 @@ func (p Plan) Reversed(maxStep int) Plan {
 	return res
 }
 
+//func (p Plan) Valid(e *Engine) bool {
+//	return false
+//}
+
 func (p Plan) String() string {
 	s := ""
 	for _, m := range p {

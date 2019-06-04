@@ -119,11 +119,6 @@ func NewEngine(t *task.Task, server comm.Server, dispatcher comm.Dispatcher,
 		xMessages:       make(chan interface{}, 100),
 	}
 	e.planRegistry = NewPlanRegistry(e)
-	//gob.Register(&TextMessage{})
-	//gob.Register(&XMessage{})
-	//gob.Register(&MafsMessage{})
-	//gob.Register(&DmtMessage{})
-	//gob.Register(&StateActionMessage{})
 	e.server.RegisterMessageChan(&TextMessage{}, e.textMessages)
 	e.server.RegisterMessageChan(&PlanExtractionMessage{}, e.extractMessages)
 	e.server.RegisterMessageChan(&XMessage{}, e.xMessages)

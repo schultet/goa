@@ -251,8 +251,9 @@ func (bfs *Mafs) expand(s state.State, n *MafsNode) []*MafsNode {
 		tp, ok := bfs.closed[succSID]
 		if ok {
 			if g < tp.g && !tp.deadend {
-				tp.parent = n
 				tp.g = g
+				tp.parent = n
+				tp.action = o
 				if bfs.reopenClosed {
 					bfs.open.Put(tp)
 					successors = append(successors, tp)
@@ -338,6 +339,8 @@ func (bfs *Mafs) processStateMessage(m *MafsMessage) {
 		return
 	}
 
+	// TODO: important! Shouldnt the duplicate be handled the same as in the
+	// expand method?
 	tp, ok := bfs.closed[newSID]
 	if !ok || m.G < tp.g {
 		//h := int(ints.Max(bfs.heuristic.Evaluate(newState), m.H))
