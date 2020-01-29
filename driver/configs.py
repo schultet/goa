@@ -8,6 +8,7 @@ configs.update({
     "mafs":   ["-s", "-s mafs-g  -h ff -l 1", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
     "dmtg":   ["-s", "-s dmt-bfs -h ff -l 1", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
     "dmtb":   ["-s", "-s dmt-gus -h ff -l 1", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
+    "dmtu":   ["-s", "-s dmt-ucb1 -h ff -l 1", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
     "mafs-tcp":   ["-s", "-s mafs-g  -h ff -l 1", "--heuristic", "ff", "--planlimit", "1"],
     "mafs-tcp+":   ["-s", "-s mafs-g  -h ff -l 1", "--heuristic", "ff", "--planlimit", "100"],
     "dmtg-tcp":   ["-s", "-s dmt-bfs -h ff -l 1", "--heuristic", "ff", "--planlimit", "1"],
@@ -174,6 +175,8 @@ configs.update({
     "dmtg-ff1-t380": ["-s", "-s dmt-bfs -h ff -l 380", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
     "dmtg-ff1-t390": ["-s", "-s dmt-bfs -h ff -l 390", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
     "dmtg-ff1-t400": ["-s", "-s dmt-bfs -h ff -l 400", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
+    # DMTU
+    "dmtu-ff1-t100": ["-s", "-s dmt-gus -h ff -l 100", "--heuristic", "ff", "--threaded", "--planlimit", "1"],
     # MAFS
     "mafs-ff1-t1":   ["-s", "-s mafs-g -h ff -l 1",   "--heuristic", "ff", "--threaded", "--planlimit", "1"],
     "mafs-ff1-t10":  ["-s", "-s mafs-g -h ff -l 10",  "--heuristic", "ff", "--threaded", "--planlimit", "1"],

@@ -163,6 +163,14 @@ func NewDmtGus(e *Engine, opts *opt.OptionSet) Strategy {
 	return dmt
 }
 
+// NewDmtUCB1 returns a balanced (uct-like) dmt strategy
+func NewDmtUCB1(e *Engine, opts *opt.OptionSet) Strategy {
+	dmt := newDmt(e, opts)
+	dmt.selectNode = ucb1SelectDmt
+	dmt.backupNode = ucb1BackupDmt
+	return dmt
+}
+
 // Tokens returns the tokenarray registered with node n.
 func (d *Dmt) Tokens(n Node) state.State {
 	return d.stateRegistry.Tokens(d.stateRegistry.Lookup(n.ID()))
@@ -449,6 +457,25 @@ func ucb1SelectDmt(d *Dmt, nodes []*DmtNode) *DmtNode {
 	return d.tiebreaker(bestNodes)
 }
 
+// propagate the average h-value among all children
+func ucb1BackupDmt(d *Dmt, n *DmtNode) {
+	n.closed = true
+	n.h = 0
+	i := 0
+	for _, child := range n.children {
+		if child.closed {
+			continue
+		}
+		n.closed = false
+		n.h += child.h
+		i += 1
+	}
+	if !n.closed {
+		n.h = n.h / i
+	}
+	n.visits++
+}
+
 // perAgentCost computes for each agent the cost from n to the
 // ancestor node that contains a different token for the agent.
 func (d *Dmt) sendMessages(s state.State, n *DmtNode) {
@@ -532,6 +559,7 @@ func processMessageDmt(d *Dmt, m *DmtMessage) {
 		return
 	}
 
+	// TODO: can this case happen at all???
 	// handle transpositions
 	tp, ok := d.transpositionTable[newSID]
 	if ok {
@@ -585,15 +613,21 @@ func init() {
 		opts.Add(opt.NewOption(opt.Int32, "disregard", 'd', 1, "disregard of message sending"))
 		return opts
 	}
-	strategyRegistry = append(strategyRegistry, &StrategyInfo{
-		Name:        "dmt-bfs",
-		Description: "distributed multi-agent thts bfs",
-		NewStrategy: NewDmtBfs,
-		Options:     dmtOptions(),
-	}, &StrategyInfo{
-		Name:        "dmt-gus",
-		Description: "distributed multi-agent thts greedy uct star",
-		NewStrategy: NewDmtGus,
-		Options:     dmtOptions(),
-	})
+	strategyRegistry = append(strategyRegistry,
+		&StrategyInfo{
+			Name:        "dmt-bfs",
+			Description: "distributed multi-agent thts bfs",
+			NewStrategy: NewDmtBfs,
+			Options:     dmtOptions(),
+		}, &StrategyInfo{
+			Name:        "dmt-gus",
+			Description: "distributed multi-agent thts greedy uct star",
+			NewStrategy: NewDmtGus,
+			Options:     dmtOptions(),
+		}, &StrategyInfo{
+			Name:        "dmt-ucb1",
+			Description: "Balanced DMT",
+			NewStrategy: NewDmtUCB1,
+			Options:     dmtOptions(),
+		})
 }
