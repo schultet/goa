@@ -1,1 +1,0 @@
-/usr/bin/cc     CMakeFiles/tcp_shutdown.dir/tests/tcp_shutdown.c.o  -o tcp_shutdown -rdynamic libnanomsg.so.1.0.0 -lanl -lrt -lpthread -lnsl -lpthread -Wl,-rpath,/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg 

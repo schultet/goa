@@ -1,1 +1,0 @@
-/usr/bin/cc     CMakeFiles/prio.dir/tests/prio.c.o  -o prio -rdynamic libnanomsg.so.1.0.0 -lanl -lrt -lpthread -lnsl -lpthread -Wl,-rpath,/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg 

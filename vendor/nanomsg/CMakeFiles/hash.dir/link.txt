@@ -1,1 +1,0 @@
-/usr/bin/cc     CMakeFiles/hash.dir/tests/hash.c.o  -o hash -rdynamic libnanomsg.so.1.0.0 -lanl -lrt -lpthread -lnsl -lpthread -Wl,-rpath,/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg 

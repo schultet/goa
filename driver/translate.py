@@ -7,8 +7,8 @@ from glob import glob
 
 
 def translatefolder(src, trg, **kw):
-    python = kw.get("python", "python2")
-    translate = kw.get("translate", "./vendor/translate/translate.py")
+    python = kw.get("python", "python3")
+    translate = kw.get("translate", "./translate/translate.py")
     port = int(kw.get("port", 3035))
     host = kw.get("host", "127.0.0.1")
     

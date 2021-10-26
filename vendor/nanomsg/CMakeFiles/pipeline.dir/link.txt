@@ -1,1 +1,0 @@
-/usr/bin/cc     CMakeFiles/pipeline.dir/tests/pipeline.c.o  -o pipeline -rdynamic libnanomsg.so.1.0.0 -lanl -lrt -lpthread -lnsl -lpthread -Wl,-rpath,/home/tim/src/gkigit.informatik.uni-freiburg.de/tschulte/dimap/vendor/nanomsg 
