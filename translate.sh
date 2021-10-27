@@ -1,1 +1,1 @@
-python3 driver/translate.py "${@:1}"
+python3 scripts/translate.py "${@:1}"

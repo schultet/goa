@@ -1,1 +1,1 @@
-python3 driver/search.py "${@:1}"
+python3 scripts/search.py "${@:1}"
