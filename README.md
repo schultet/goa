@@ -14,7 +14,7 @@ distributed multi-agent planning system.
 1. clone the repository. Either using the go tool `go get`:
         
     ``` shell
-    go get github.com/schultet/goa/src
+    go get github.com/schultet/goa/pkg
     ```
 
     or manually using `git clone`:
@@ -27,15 +27,8 @@ distributed multi-agent planning system.
 2. install the required go packages
 
     ``` shell
-    cd $GOPATH/src/github.com/schultet/goa/src/
+    cd $GOPATH/src/github.com/schultet/goa/pkg/
     go get [-u]
-    ```
-3. install vendor code
-
-    ``` shell
-    cd $GOPATH/src/github.com/schultet/goa/vendor/
-    make nanomsg
-    make nanomsg4py
     ```
 
 
@@ -88,7 +81,7 @@ Example:
    or
 
 ``` shell
-    go test ./src/...
+    go test ./pkg/...
 ```
 
 ### Contact ###

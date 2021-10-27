@@ -49,8 +49,8 @@ def on_search(*args, **kw):
             args.remove('--threaded')
             kw['threaded'] = True
     print('Config:', kw, args)
-    print('Revision:', str(subprocess.check_output(['git', 'log', '-1', 'HEAD', 
-        '--format="%ai %H"', '--date=local'])))
+    #print('Revision:', str(subprocess.check_output(['git', 'log', '-1', 'HEAD', 
+    #    '--format="%ai %H"', '--date=local'])))
     print('Go version:', str(subprocess.check_output(['go', 'version'])))
     runfolder(*args, **kw)
 
