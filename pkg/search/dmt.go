@@ -362,7 +362,7 @@ func (d *Dmt) defaultInitialize(s state.State, n *DmtNode) {
 		gValue = n.distance(d.costtype) + o.AdjustedCost(d.costtype)
 		// prune node if it is worse than or equal to the best found plan
 		// (regarding cost)
-		if gValue >= d.planRegistry.bestCost {
+		if gValue > d.planRegistry.bestCost {
 			continue
 		}
 
@@ -555,7 +555,7 @@ func processMessageDmt(d *Dmt, m *DmtMessage) {
 
 	gValue := parent.distance(d.costtype) + m.G
 	// prune if state has worse cost than best found plans cost
-	if gValue >= d.planRegistry.bestCost {
+	if gValue > d.planRegistry.bestCost {
 		return
 	}
 

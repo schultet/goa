@@ -1,0 +1,9 @@
+*
+!pkg
+!cmd
+!scripts
+!translate
+!test
+!go.mod
+!go.sum
+!search.sh

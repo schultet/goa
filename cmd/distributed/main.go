@@ -5,12 +5,9 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"runtime"
-	"strings"
-	"sync"
 	"time"
 
 	"github.com/schultet/goa/pkg/comm"
@@ -47,46 +44,7 @@ func Execute() {
 		os.Exit(1)
 	}
 
-	if len(problems) > 1 { // run planner threaded
-		RunAgentsThreaded(problems, agents, opts)
-	} else {
-		RunAgent(problems[0], agents, opts) // run planner as individual process
-	}
-}
-
-// RunAgentsThreaded (1) initializes task, heuristic, engine, and strategy f.e.
-// agent and (2) starts the search process in a go-routine f.e. agent
-func RunAgentsThreaded(problems []string, agents comm.ConnList, opts *opt.OptionSet) {
-	if len(agents) != len(problems) {
-		log.Fatalf("ERR: #Problems != #Agents. Problems:%v\nAgents:%v\n", len(problems), len(agents))
-	}
-	inChans, outChans := createChannels(agents)
-	engines := make([]*search.Engine, 0, len(agents))
-	for _, agent := range agents {
-		agentID := agent.AgentID
-		log.Printf("@Agent%2d | Port: %d\n", agentID, agent.Port)
-
-		t, err := task.NewTaskFromFile(problems[agentID])
-		if err != nil {
-			log.Fatalf("%v\n", err)
-		}
-		if t.AgentID != agentID {
-			log.Fatalf("ERR: AgentID of Task and ConnList do not match. Task:%v\nConn:%+v\nProbs:%+v\n", t.AgentID, agents, problems)
-		}
-		server, dispatcher := comm.CreateChanComm(agentID, agents, inChans, outChans)
-		engines = append(engines, search.NewEngine(t, server, dispatcher, agents, opts))
-	}
-
-	timeout := time.Second * time.Duration(opts.GetFloat64("timeout"))
-	var wg sync.WaitGroup
-	wg.Add(len(engines))
-	for i := 0; i < len(engines); i++ {
-		go func(i int) {
-			defer wg.Done()
-			engines[i].Search(timeout)
-		}(i)
-	}
-	wg.Wait()
+	RunAgent(problems[0], agents, opts) // run planner as individual process
 }
 
 // RunAgent initializes task, heuristic, engine, and strategy, then starts the
@@ -99,37 +57,6 @@ func RunAgent(problem string, agents comm.ConnList, opts *opt.OptionSet) {
 	server, dispatcher := comm.CreateTCPComm(t.AgentID, agents)
 	engine := search.NewEngine(t, server, dispatcher, agents, opts)
 	engine.Search(time.Second * time.Duration(opts.GetFloat64("timeout")))
-}
-
-// GetJSONFiles returns a list of all files in 'folder' with '.json' suffix
-func GetJSONFiles(folder string) []os.FileInfo {
-	var res []os.FileInfo
-	files, _ := ioutil.ReadDir(folder)
-	for _, f := range files {
-		if strings.HasPrefix(f.Name(), ".") {
-			continue
-		}
-		if strings.HasSuffix(strings.ToLower(f.Name()), ".json") {
-			res = append(res, f)
-		}
-	}
-	return res
-}
-
-func createChannels(agents comm.ConnList) (in, out map[int]map[int]chan comm.Message) {
-	in = make(map[int]map[int]chan comm.Message)
-	out = make(map[int]map[int]chan comm.Message)
-	for _, agent := range agents {
-		in[agent.AgentID] = make(map[int]chan comm.Message)
-		out[agent.AgentID] = make(map[int]chan comm.Message)
-	}
-	for _, agent := range agents {
-		for _, other := range agents.Except(agent.AgentID) {
-			in[agent.AgentID][other.AgentID] = make(chan comm.Message, comm.MsgBufferSize)
-			out[other.AgentID][agent.AgentID] = in[agent.AgentID][other.AgentID]
-		}
-	}
-	return in, out
 }
 
 // generalOptions defines the planners opt options, that can be parsed later

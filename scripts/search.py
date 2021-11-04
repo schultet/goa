@@ -25,7 +25,7 @@ def runfolder(*args, **kw):
         problems += "--problem {} ".format(tasks[i])
     
     tmpl = "{} {} {} {} & "
-    planner = "go run cmd/goa/main.go"
+    planner = "go run cmd/centralized/main.go"
     if kw.get('threaded', None):
         cmd = tmpl.format(planner, problems, agents, ' '.join(args))
     else:
@@ -34,6 +34,7 @@ def runfolder(*args, **kw):
             s = tmpl.format(planner, "--problem " + tasks[i], agents, ' '.join(args))
             cmd += s
     cmd = cmd[:-2]
+    print(cmd)
     os.system(cmd)
 
 

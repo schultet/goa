@@ -235,7 +235,7 @@ func (bfs *Mafs) expand(s state.State, n *MafsNode) []*MafsNode {
 		}
 
 		// (1) prune if worse than or equal to best found plan
-		if g >= bfs.planRegistry.bestCost {
+		if g > bfs.planRegistry.bestCost {
 			continue
 		}
 
@@ -335,7 +335,7 @@ func (bfs *Mafs) processStateMessage(m *MafsMessage) {
 	a := bfs.Actions[int(m.SenderID)][0]
 
 	// prune if state has worse cost than best found plans cost
-	if m.G >= bfs.planRegistry.bestCost {
+	if m.G > bfs.planRegistry.bestCost {
 		return
 	}
 
