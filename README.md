@@ -181,4 +181,4 @@ such that one agent uses port 3035 and the other port 3036 (as an example).
 
 ### References ###
 
-* will be added soon
+* https://doi.org/10.6094/UNIFR/221778
