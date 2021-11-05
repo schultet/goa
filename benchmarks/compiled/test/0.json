@@ -1,0 +1,54 @@
+{
+"AgentID": 0,
+"AgentName": "Agent0",
+"InitialState": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+"Goal": [{"Var": 0, "Val": 0}, {"Var": 1, "Val": 0}, {"Var": 2, "Val": 0}, {"Var": 3, "Val": 0}],
+"Variables": [{"Factname": ["Atom completed(p0)", "NegatedAtom completed(p0)"], "IsPrivate": false, "Name": "var0", "Range": 2}, {"Factname": ["Atom completed(p1)", "NegatedAtom completed(p1)"], "IsPrivate": false, "Name": "var1", "Range": 2}, {"Factname": ["Atom completed(p2)", "NegatedAtom completed(p2)"], "IsPrivate": false, "Name": "var2", "Range": 2}, {"Factname": ["Atom completed(p3)", "NegatedAtom completed(p3)"], "IsPrivate": false, "Name": "var3", "Range": 2}, {"Factname": ["(P)Atom satisfies(p0, alt0)", "NegatedAtom satisfies(p0, alt0)"], "IsPrivate": true, "Name": "var4", "Range": 2}, {"Factname": ["(P)Atom satisfies(p0, prop0)", "NegatedAtom satisfies(p0, prop0)"], "IsPrivate": true, "Name": "var5", "Range": 2}, {"Factname": ["(P)Atom satisfies(p0, prop1)", "NegatedAtom satisfies(p0, prop1)"], "IsPrivate": true, "Name": "var6", "Range": 2}, {"Factname": ["(P)Atom satisfies(p1, alt0)", "NegatedAtom satisfies(p1, alt0)"], "IsPrivate": true, "Name": "var7", "Range": 2}, {"Factname": ["(P)Atom satisfies(p1, prop0)", "NegatedAtom satisfies(p1, prop0)"], "IsPrivate": true, "Name": "var8", "Range": 2}, {"Factname": ["(P)Atom satisfies(p1, prop1)", "NegatedAtom satisfies(p1, prop1)"], "IsPrivate": true, "Name": "var9", "Range": 2}, {"Factname": ["(P)Atom satisfies(p2, alt0)", "NegatedAtom satisfies(p2, alt0)"], "IsPrivate": true, "Name": "var10", "Range": 2}, {"Factname": ["(P)Atom satisfies(p2, prop0)", "NegatedAtom satisfies(p2, prop0)"], "IsPrivate": true, "Name": "var11", "Range": 2}, {"Factname": ["(P)Atom satisfies(p2, prop1)", "NegatedAtom satisfies(p2, prop1)"], "IsPrivate": true, "Name": "var12", "Range": 2}],
+"Operators": [
+{"Cost": 4, "GlobalID": 0, "IsPrivate": false, "Name": "deliver p0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 0}], "Prevail": [{"Val": 1, "Var": 4}, {"Val": 0, "Var": 5}, {"Val": 0, "Var": 6}]},
+{"Cost": 4, "GlobalID": 1, "IsPrivate": false, "Name": "deliver p1", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 1}], "Prevail": [{"Val": 1, "Var": 7}, {"Val": 0, "Var": 8}, {"Val": 0, "Var": 9}]},
+{"Cost": 4, "GlobalID": 2, "IsPrivate": false, "Name": "deliver p2", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 2}], "Prevail": [{"Val": 1, "Var": 10}, {"Val": 0, "Var": 11}, {"Val": 0, "Var": 12}]},
+{"Cost": 0, "GlobalID": 3, "IsPrivate": true, "Name": "refine p0 alt0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 4}], "Prevail": []},
+{"Cost": 0, "GlobalID": 4, "IsPrivate": true, "Name": "refine p0 prop0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 5}], "Prevail": []},
+{"Cost": 0, "GlobalID": 5, "IsPrivate": true, "Name": "refine p0 prop1", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 6}], "Prevail": []},
+{"Cost": 0, "GlobalID": 6, "IsPrivate": true, "Name": "refine p1 alt0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 7}], "Prevail": []},
+{"Cost": 0, "GlobalID": 7, "IsPrivate": true, "Name": "refine p1 prop0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 8}], "Prevail": []},
+{"Cost": 0, "GlobalID": 8, "IsPrivate": true, "Name": "refine p1 prop1", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 9}], "Prevail": []},
+{"Cost": 0, "GlobalID": 9, "IsPrivate": true, "Name": "refine p2 alt0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 10}], "Prevail": []},
+{"Cost": 0, "GlobalID": 10, "IsPrivate": true, "Name": "refine p2 prop0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 11}], "Prevail": []},
+{"Cost": 0, "GlobalID": 11, "IsPrivate": true, "Name": "refine p2 prop1", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 12}], "Prevail": []}
+
+],
+"ProjectedOperators": [
+{"Cost": 4, "GlobalID": 0, "IsPrivate": false, "Name": "deliver p0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 0}], "Prevail": [{"Val": 1, "Var": 4}, {"Val": 0, "Var": 5}, {"Val": 0, "Var": 6}]},
+{"Cost": 4, "GlobalID": 1, "IsPrivate": false, "Name": "deliver p1", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 1}], "Prevail": [{"Val": 1, "Var": 7}, {"Val": 0, "Var": 8}, {"Val": 0, "Var": 9}]},
+{"Cost": 4, "GlobalID": 2, "IsPrivate": false, "Name": "deliver p2", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 2}], "Prevail": [{"Val": 1, "Var": 10}, {"Val": 0, "Var": 11}, {"Val": 0, "Var": 12}]},
+{"Cost": 0, "GlobalID": 3, "IsPrivate": true, "Name": "refine p0 alt0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 4}], "Prevail": []},
+{"Cost": 0, "GlobalID": 4, "IsPrivate": true, "Name": "refine p0 prop0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 5}], "Prevail": []},
+{"Cost": 0, "GlobalID": 5, "IsPrivate": true, "Name": "refine p0 prop1", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 6}], "Prevail": []},
+{"Cost": 0, "GlobalID": 6, "IsPrivate": true, "Name": "refine p1 alt0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 7}], "Prevail": []},
+{"Cost": 0, "GlobalID": 7, "IsPrivate": true, "Name": "refine p1 prop0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 8}], "Prevail": []},
+{"Cost": 0, "GlobalID": 8, "IsPrivate": true, "Name": "refine p1 prop1", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 9}], "Prevail": []},
+{"Cost": 0, "GlobalID": 9, "IsPrivate": true, "Name": "refine p2 alt0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 10}], "Prevail": []},
+{"Cost": 0, "GlobalID": 10, "IsPrivate": true, "Name": "refine p2 prop0", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 11}], "Prevail": []},
+{"Cost": 0, "GlobalID": 11, "IsPrivate": true, "Name": "refine p2 prop1", "Owner": 0, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 12}], "Prevail": []},
+{"Cost": 5, "GlobalID": 12, "IsPrivate": false, "Name": "deliver p0", "Owner": 1, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 0}], "Prevail": []},
+{"Cost": 5, "GlobalID": 13, "IsPrivate": false, "Name": "deliver p1", "Owner": 1, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 1}], "Prevail": []},
+{"Cost": 5, "GlobalID": 14, "IsPrivate": false, "Name": "deliver p3", "Owner": 1, "Prepost": [{"Cond": [], "Post": 0, "Pre": 1, "Var": 3}], "Prevail": []}
+],
+"MutexGroups": [
+[{"Var": 1, "Val": 0}],
+[{"Var": 12, "Val": 0}],
+[{"Var": 7, "Val": 0}],
+[{"Var": 2, "Val": 0}],
+[{"Var": 11, "Val": 0}],
+[{"Var": 3, "Val": 0}],
+[{"Var": 6, "Val": 0}],
+[{"Var": 4, "Val": 0}],
+[{"Var": 5, "Val": 0}],
+[{"Var": 8, "Val": 0}],
+[{"Var": 9, "Val": 0}],
+[{"Var": 0, "Val": 0}],
+[{"Var": 10, "Val": 0}]
+]
+}

@@ -4,6 +4,9 @@
 !scripts
 !translate
 !test
+!benchmarks
 !go.mod
 !go.sum
 !search.sh
+!translate.sh
+!requirements.txt

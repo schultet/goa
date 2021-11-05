@@ -71,7 +71,7 @@ def on_translate(*args, **kw):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Run DIMAP planner')
+    parser = argparse.ArgumentParser(description='Run GOA planner')
     parser.add_argument('src', help='path to folder containing src task')
     parser.add_argument('trg', help='destination path')
     parser.add_argument(
