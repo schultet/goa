@@ -66,12 +66,12 @@ steps:
     Note: configuration profiles are defined in scripts/configs.py
 
 Example:
-``` shell
-./search.sh -t ./experiments/taxi01/ \
-    --search '"myconfig -s dmt-gus -h ff -l 100 -c 1.41"' \ 
-    --heuristic ff \
-    --threaded
-```
+    ``` shell
+    ./search.sh -t ./experiments/taxi01/ \
+        --search '"myconfig -s dmt-gus -h ff -l 100 -c 1.41"' \ 
+        --heuristic ff \
+        --threaded
+    ```
 
 ### Running the planner (distributed) ###
 
@@ -82,7 +82,7 @@ different terminals/shells (one for each agent):
    distributed process in which all planning agents participate. E.g.:
 
     ``` shell
-    #Agent 0:
+    # Agent 0:
 
     python3 ./translate/translate.py \
     benchmarks/factored/productionsite/2-4-2-1/domain-0.pddl \
@@ -95,7 +95,7 @@ different terminals/shells (one for each agent):
     ```
     
     ``` shell
-    #Agent 1 (different terminal):
+    # Agent 1 (different terminal):
 
     python3 ./translate/translate.py \
     benchmarks/factored/productionsite/2-4-2-1/domain-1.pddl \
@@ -140,7 +140,7 @@ To use our environment, you can build and run a GOA image:
 0. Build the docker image:
 
     ``` shell
-        docker build -t goa .
+    docker build -t goa .
     ```
 
 1. Run the container:
