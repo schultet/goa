@@ -66,6 +66,7 @@ steps:
     Note: configuration profiles are defined in scripts/configs.py
 
 Example:
+
     ``` shell
     ./search.sh -t ./experiments/taxi01/ \
         --search '"myconfig -s dmt-gus -h ff -l 100 -c 1.41"' \ 
