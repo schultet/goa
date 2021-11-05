@@ -40,9 +40,9 @@ steps:
 0. compile the problem description files (factored MA-PDDL) into the required
    json format
 
-``` shell
-    ./translate.sh <src-folder> <trg-folder>
-```
+    ``` shell
+        ./translate.sh <src-folder> <trg-folder>
+    ```
 
 1. run the planner with search.sh, either specifying all configuration options:
 
@@ -63,7 +63,7 @@ steps:
         [--threaded --macros]
     ```
 
-    configuration profiles are defined in scripts/configs.py
+    Note: configuration profiles are defined in scripts/configs.py
 
 Example:
 ``` shell
@@ -81,53 +81,57 @@ different terminals/shells (one for each agent):
 0. Compile the MA-PDDL factors into a local task file for each agent. This is a
    distributed process in which all planning agents participate. E.g.:
 
-``` shell
-Agent 0:
+    ``` shell
+    #Agent 0:
 
-python3 ./translate/translate.py \
-benchmarks/factored/productionsite/2-4-2-1/domain-0.pddl \
-benchmarks/factored/productionsite/2-4-2-1/problem-0.pddl \
---agent-url tcp://127.0.0.1:3035 \
---agent-url tcp://127.0.0.1:3036 \
---agent-id 0 \
---output test/0.json \
---json
+    python3 ./translate/translate.py \
+    benchmarks/factored/productionsite/2-4-2-1/domain-0.pddl \
+    benchmarks/factored/productionsite/2-4-2-1/problem-0.pddl \
+    --agent-url tcp://127.0.0.1:3035 \
+    --agent-url tcp://127.0.0.1:3036 \
+    --agent-id 0 \
+    --output test/0.json \
+    --json
+    ```
+    
+    ``` shell
+    #Agent 1 (different terminal):
 
-Agent 1 (different terminal):
-
-python3 ./translate/translate.py \
-benchmarks/factored/productionsite/2-4-2-1/domain-1.pddl \
-benchmarks/factored/productionsite/2-4-2-1/problem-1.pddl \
---agent-url tcp://127.0.0.1:3035 \
---agent-url tcp://127.0.0.1:3036 \
---agent-id 1 \
---output test/1.json \
---json
-```
+    python3 ./translate/translate.py \
+    benchmarks/factored/productionsite/2-4-2-1/domain-1.pddl \
+    benchmarks/factored/productionsite/2-4-2-1/problem-1.pddl \
+    --agent-url tcp://127.0.0.1:3035 \
+    --agent-url tcp://127.0.0.1:3036 \
+    --agent-id 1 \
+    --output test/1.json \
+    --json
+    ```
 
 1. Run the planner using the compiled task-files (.json):
 
-``` shell
-#Agent 0:
+    ``` shell
+    # Agent 0:
 
-go run cmd/distributed/main.go \
---problem test/0.json \
---agent "0 127.0.0.1 3035" \
---agent "1 127.0.0.1 3036" \
--s "mafs -s mafs-g  -h ff -l 1" \
---heuristic "ff" \
---planlimit 1
+    go run cmd/distributed/main.go \
+    --problem test/0.json \
+    --agent "0 127.0.0.1 3035" \
+    --agent "1 127.0.0.1 3036" \
+    -s "mafs -s mafs-g  -h ff -l 1" \
+    --heuristic "ff" \
+    --planlimit 1
+    ```
 
-#Agent 1 (different terminal):
+    ``` shell
+    # Agent 1 (different terminal):
 
-go run cmd/distributed/main.go \
---problem test/1.json \
---agent "0 127.0.0.1 3035" \
---agent "1 127.0.0.1 3036" \
--s "mafs -s mafs-g  -h ff -l 1" \
---heuristic "ff" \
---planlimit 1
-```
+    go run cmd/distributed/main.go \
+    --problem test/1.json \
+    --agent "0 127.0.0.1 3035" \
+    --agent "1 127.0.0.1 3036" \
+    -s "mafs -s mafs-g  -h ff -l 1" \
+    --heuristic "ff" \
+    --planlimit 1
+    ```
 
 ### Docker ###
 
@@ -135,25 +139,25 @@ To use our environment, you can build and run a GOA image:
 
 0. Build the docker image:
 
-``` shell
-    docker build -t goa .
-```
+    ``` shell
+        docker build -t goa .
+    ```
 
 1. Run the container:
 
-``` shell
-docker run -d -t --name my_goa goa
-```
+    ``` shell
+    docker run -d -t --name my_goa goa
+    ```
 
 2. Execute planner commands, e.g.:
 
-``` shell
-# Translate MA-PDDL files
-docker exec -it my_goa /bin/bash translate.sh <path/to/pddl/> <path/to/compiled/task>
+    ``` shell
+    # Translate MA-PDDL files
+    docker exec -it my_goa /bin/bash translate.sh <path/to/pddl/> <path/to/compiled/task>
 
-# Search for a plan
-docker exec -it my_goa /bin/bash search.sh -t <path/to/compiled/task> -c mafs
-```
+    # Search for a plan
+    docker exec -it my_goa /bin/bash search.sh -t <path/to/compiled/task> -c mafs
+    ```
 
 Note: you can also use the Docker image to plan in a distributed fashion. In
 this case, you need to `docker run` two GOA containers, each representing a
