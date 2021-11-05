@@ -65,7 +65,7 @@ steps:
 
     Note: configuration profiles are defined in scripts/configs.py
 
-Example:
+    Example:
 
     ``` shell
     ./search.sh -t ./experiments/taxi01/ \
