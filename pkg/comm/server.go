@@ -66,7 +66,9 @@ func NewChanServer(agentID int, agents ConnList, in map[int]chan Message) *ChanS
 		}
 		server.nextAgentID[agent.AgentID] = agents[(i+1)%len(agents)].AgentID
 	}
-	server.lastIndex = server.agents[0].AgentID
+	if len(agents) > 0 {
+		server.lastIndex = server.agents[0].AgentID
+	}
 	//fmt.Printf("server.nextAgentID = %+v\n", server.nextAgentID)
 	go server.applyHandlers()
 	return server

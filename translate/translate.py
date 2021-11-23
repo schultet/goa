@@ -533,6 +533,7 @@ def translate_task(strips_to_sas, ranges, translation_key, private_vars,
                                      mutex_ranges)
 
     projected_ops = []
+    
     if comm is not None:
         operators = sort_operators(operators)
         ma_assign_owner_global_id(comm, operators)
@@ -543,6 +544,11 @@ def translate_task(strips_to_sas, ranges, translation_key, private_vars,
         # Add local operators to the projected operators from other agents
         projected_ops += deepcopy(operators)
         projected_ops = sorted(projected_ops, key = lambda x: x.global_id)
+    else:
+        for i, op in enumerate(operators):
+            op.global_id = i
+            op.owner = 0
+
 
     axiom_layers = [-1] * len(ranges)
     for atom, layer in axiom_layer_dict.items():
@@ -558,9 +564,10 @@ def translate_task(strips_to_sas, ranges, translation_key, private_vars,
 
 
 def unsolvable_sas_task(msg):
+    private_vars = []
     print("%s! Generating unsolvable task..." % msg)
     variables = sas_tasks.SASVariables(
-        [2], [-1], [["Atom dummy(val1)", "Atom dummy(val2)"]])
+        [2], [-1], [["Atom dummy(val1)", "Atom dummy(val2)"]], private_vars)
     # We create no mutexes: the only possible mutex is between
     # dummy(val1) and dummy(val2), but the preprocessor would filter
     # it out anyway since it is trivial (only involves one
@@ -571,8 +578,11 @@ def unsolvable_sas_task(msg):
     operators = []
     axioms = []
     metric = True
+    comm = None
+    projected_ops = []
     return sas_tasks.SASTask(variables, mutexes, init, goal,
-                             operators, axioms, metric, [])
+                             operators, axioms, metric, [],
+                             projected_ops, comm)
 
 
 
